@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout } from "antd";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MenuTop from './Componentes/MenuTop'
+import Footer from'./Componentes/Footer'
 
 
 //pages
@@ -26,7 +27,8 @@ function App() {
   return (
     <Layout>
       <Router>
-        <Header>
+        <Header style={{backgroundColor:"#2E151B"}}
+        style={{zIndex:1}}>
          <MenuTop/>
 </Header>
 
@@ -52,6 +54,8 @@ function App() {
             </Route>
           </Switch>
         </Content>
+
+    
       </Router>
     </Layout>
   );

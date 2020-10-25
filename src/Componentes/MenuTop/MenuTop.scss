@@ -1,5 +1,30 @@
 .menu-top{
-display: flex;
+    display: flex;
+    color:white;
+    background-color:#2E151B !important;
+    .ant-menu-light{
+     background-color:#2E151B !important;
+     color:white;
+     
+    }
+    p{
+        color: #376E6F;
+        margin: 0;
+    }
+
+    p:hover{
+        color: #376e6f;
+    }
+    .ant-menu-submenu{
+        color:white;
+        
+       }
+
+       ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu{
+        color:white !important; 
+       }
+       
+
 &__logo{
     display: flex;
     margin-right:40px;

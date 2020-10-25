@@ -15,22 +15,23 @@ function MenuTop() {
     <Logo/>
 </div>
 <Menu
-theme="dark"
+theme="light"
 mode="horizontal"
 defaultSelectedKeys={["1"]}
-stye={{lineHeight:"80px"}}>
+style={{marginTop:"0px",marginBottom:"0px", lineHeight:"62.5px"}}
+>
 
 <Menu.Item key="1">
-<Link to="/">Home</Link>
+<Link to="/"><p>Home</p></Link>
 </Menu.Item>
 <Menu.Item key="2">
-<Link to="/new-movies">Latest Movies</Link>
+<Link to="/new-movies"><p>Latest Movies</p></Link>
 </Menu.Item>
 <Menu.Item key="3">
-<Link to="/popular-movie">Popular Movies</Link>
+<Link to="/popular-movie"><p>Popular Movies</p></Link>
 </Menu.Item>
 <Menu.Item key="4">
-<Link to="/search">Search</Link>
+<Link to="/search"><p>Search</p></Link>
 </Menu.Item>
 </Menu>
 

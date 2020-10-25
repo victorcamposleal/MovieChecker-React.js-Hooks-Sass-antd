@@ -20,7 +20,7 @@ return<Loading/>;
 }
 
 const {results}=movie.result;
-console.log(results)
+
 
 // abajo renderizremos todas las peliculas de la url para esto utilizaremos el foreach para recorrer todo el array
 return(
