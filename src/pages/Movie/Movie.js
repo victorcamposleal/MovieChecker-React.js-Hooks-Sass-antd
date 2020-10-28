@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { Row, Col, Button } from 'antd';
+import { Row, Col, Button} from 'antd';
+import { CaretDownFilled,PoweroffOutlined } from '@ant-design/icons'
 //to use the parameters from the url we have to use a hook named use params in this case we will use the id of the movie
 import { useParams } from 'react-router-dom';
 import { moment } from 'moment';
@@ -7,6 +8,8 @@ import useFetch from '../../hooks/useFetch'
 import { URL_API, API } from '../../utils/constants'
 import Loading from '../../Componentes/Loading'
 import ModalVideo from'../../Componentes/ModalVideo'
+
+
 
 import './Movie.scss'
 
@@ -89,14 +92,15 @@ function MovieInfo(props){
  const[modalOn,setModalOn]=useState(false);
  const videoMovie=useFetch(`${URL_API}/movie/${id}/videos?api_key=${API}&language=en-US`)
  console.log(videoMovie)
-const opeModal=()=>setModalOn(true);
+const openModal=()=>setModalOn(true);
 const closeModal=()=>setModalOn(false);
+
 const renderVideo=()=>{
     if(videoMovie.result){
-        if(videoMovie.result.results.lenght > 0){
+        if(videoMovie.result.results.length > 0){
             return(
                 <>
-<Button onclik={opeModal}>
+<Button icon={<PoweroffOutlined/>} onClick={openModal}>
     Ver Trailer
     </Button>
     <ModalVideo videoKey={videoMovie.result.results[0].key}
@@ -115,8 +119,10 @@ const renderVideo=()=>{
 <h1>
     {title}
     <span>{release_date}</span>
-{renderVideo()}
+
 </h1>
+
+{renderVideo()}
 
 
 
