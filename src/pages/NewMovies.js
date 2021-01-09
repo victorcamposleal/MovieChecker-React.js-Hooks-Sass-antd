@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Row, Col } from "antd";
 import { URL_API, API } from '../utils/constants'
 import MovieCatalog from '../Componentes/MovieCatalog'
+import Pagination from '../Componentes/Pagination'
 import Footer from '../Componentes/Footer';
 import Loading from '../Componentes/Loading'
 
@@ -22,6 +23,10 @@ function NewMovies() {
 
     }, [page])
 
+  // esta función flecha lo que hace es que cuando la pagina cambia se refresca y pasa como parametro la pagina actualcon este Onchange 
+const onChangePage=page=>{
+    setPage(page)
+}
 
     return (
         <Row>
@@ -34,10 +39,21 @@ function NewMovies() {
 
             </Col>
             {movieList.results ? (
-        
+           <Row> 
             <Col span="24">
-              <Row>  <MovieCatalog movies={movieList}/></Row>
+            <Row> <MovieCatalog movies={movieList}/></Row>
             </Col>
+
+<Col span="50">
+
+<Pagination
+
+currentPage={movieList.page}
+ totalItems={movieList.total_results}
+ onChangePage={onChangePage}/>
+
+</Col>
+</Row>
             
             ) : (<Col span="24"><Loading /></Col>)
 

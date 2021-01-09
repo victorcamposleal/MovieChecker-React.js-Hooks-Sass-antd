@@ -30,6 +30,7 @@ const {movie:{id,title,poster_path}}=props
 <Card  hoverable
 style={{width:240}}
 cover={<img alt={title}src={posterPath}/>}>
+
 <Meta title={title}/>
 
 </Card>
